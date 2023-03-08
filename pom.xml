@@ -49,6 +49,20 @@
 			</exclusions>
 		</dependency>
 
+
+		<!-- web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+			<optional>true</optional>
+		</dependency>
+
 		<!-- test-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
