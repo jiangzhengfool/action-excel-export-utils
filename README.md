@@ -1,5 +1,9 @@
 # Excel 导出工具
 
+![测试结果1](https://gitcode.net/qiutongcunyi/excel-export-utils/-/blob/master/static/%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C1.png "测试结果1")
+
+![测试结果2](https://gitcode.net/qiutongcunyi/excel-export-utils/-/blob/master/static/%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C2.png "测试结果2")
+
 ## 简介
 和其他Excel导出工具不同，这个工具不能凭空生成一个Excel文件，而是必须指定一个Excel模板文件。工具将会数据填充到Excel模板中，并最终导出为新的Excel文件。
 
