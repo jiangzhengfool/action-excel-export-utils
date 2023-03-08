@@ -21,4 +21,4 @@
 - 可以实现一些非常复杂的Excel表格的导出。
 - 通过提供了默认的处理，对于一些简单的表格导出，也提供的较方便的使用。
 - 通过参考单元格样式的方法，来解决大数据量表格的单元格样式超过64000个的限制问题。对于绝大多数表格，真实的独立的样式不会很多，基本都是几种样式互相引用。
-
+异常的文本为`java.lang.IllegalStateException: The maximum number of Cell Styles was exceeded. You can define up to 64000 style in a .xlsx Workbook`
