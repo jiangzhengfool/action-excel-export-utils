@@ -461,43 +461,43 @@ public class ExportExcelUtilTests {
             }
             int column = 0;
             //序号
-            cellDataList.add(ExcelCellData.builder().value(i+1).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(i+1).cellCustomData(cellCustomDataList.get(column++)).build());
             //编号
-            cellDataList.add(ExcelCellData.builder().value("BH0001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("BH0001").cellCustomData(cellCustomDataList.get(column++)).build());
             //客户名称
-            cellDataList.add(ExcelCellData.builder().value("客户A").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("客户A").cellCustomData(cellCustomDataList.get(column++)).build());
             //统一社会信用代码
             cellDataList.add(ExcelCellData.builder().value("3343241231231312")
-                .celCustomData(cellCustomDataList.get(column++)).build());
+                .cellCustomData(cellCustomDataList.get(column++)).build());
             //客户信息备注
             cellDataList.add(ExcelCellData.builder().value(Arrays.asList("备注1","备注2","备注3"))
-                .celCustomData(cellCustomDataList.get(column++)).build());
+                .cellCustomData(cellCustomDataList.get(column++)).build());
             //联系人
-            cellDataList.add(ExcelCellData.builder().value("旺旺").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("旺旺").cellCustomData(cellCustomDataList.get(column++)).build());
             //手机号
-            cellDataList.add(ExcelCellData.builder().value("13111111111").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("13111111111").cellCustomData(cellCustomDataList.get(column++)).build());
             //销售负责人
-            cellDataList.add(ExcelCellData.builder().value("喵喵").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("喵喵").cellCustomData(cellCustomDataList.get(column++)).build());
             //项目负责人
-            cellDataList.add(ExcelCellData.builder().value("唧唧").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("唧唧").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单编号
-            cellDataList.add(ExcelCellData.builder().value("DDBH000001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("DDBH000001").cellCustomData(cellCustomDataList.get(column++)).build());
             //合同编号
-            cellDataList.add(ExcelCellData.builder().value("HTBH000001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("HTBH000001").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单类型
-            cellDataList.add(ExcelCellData.builder().value("套餐").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("套餐").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单状态
-            cellDataList.add(ExcelCellData.builder().value("已回款").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("已回款").cellCustomData(cellCustomDataList.get(column++)).build());
             //开始日期
-            cellDataList.add(ExcelCellData.builder().value("2023-03-04").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("2023-03-04").cellCustomData(cellCustomDataList.get(column++)).build());
             //结束日期
-            cellDataList.add(ExcelCellData.builder().value("2023-05-04").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("2023-05-04").cellCustomData(cellCustomDataList.get(column++)).build());
             //有效期/天
-            cellDataList.add(ExcelCellData.builder().value(61).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(61).cellCustomData(cellCustomDataList.get(column++)).build());
             //套餐时长
-            cellDataList.add(ExcelCellData.builder().value(1000.5).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(1000.5).cellCustomData(cellCustomDataList.get(column++)).build());
             //订单备注
-            cellDataList.add(ExcelCellData.builder().value("").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("").cellCustomData(cellCustomDataList.get(column++)).build());
         }
     }
 
@@ -529,43 +529,43 @@ public class ExportExcelUtilTests {
             List<ExcelCellCustomData> cellCustomDataList = i%2==0?evenCellCustomDataList:oddCellCustomDataList;
             int column = 0;
             //序号
-            cellDataList.add(ExcelCellData.builder().value(i+1).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(i+1).cellCustomData(cellCustomDataList.get(column++)).build());
             //编号
-            cellDataList.add(ExcelCellData.builder().value("BH0001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("BH0001").cellCustomData(cellCustomDataList.get(column++)).build());
             //客户名称
-            cellDataList.add(ExcelCellData.builder().value("客户A").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("客户A").cellCustomData(cellCustomDataList.get(column++)).build());
             //统一社会信用代码
             cellDataList.add(ExcelCellData.builder().value("3343241231231312")
-                .celCustomData(cellCustomDataList.get(column++)).build());
+                .cellCustomData(cellCustomDataList.get(column++)).build());
             //客户信息备注
             cellDataList.add(ExcelCellData.builder().value(Arrays.asList("备注1","备注2","备注3"))
-                .celCustomData(cellCustomDataList.get(column++)).build());
+                .cellCustomData(cellCustomDataList.get(column++)).build());
             //联系人
-            cellDataList.add(ExcelCellData.builder().value("旺旺").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("旺旺").cellCustomData(cellCustomDataList.get(column++)).build());
             //手机号
-            cellDataList.add(ExcelCellData.builder().value("13111111111").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("13111111111").cellCustomData(cellCustomDataList.get(column++)).build());
             //销售负责人
-            cellDataList.add(ExcelCellData.builder().value("喵喵").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("喵喵").cellCustomData(cellCustomDataList.get(column++)).build());
             //项目负责人
-            cellDataList.add(ExcelCellData.builder().value("唧唧").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("唧唧").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单编号
-            cellDataList.add(ExcelCellData.builder().value("DDBH000001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("DDBH000001").cellCustomData(cellCustomDataList.get(column++)).build());
             //合同编号
-            cellDataList.add(ExcelCellData.builder().value("HTBH000001").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("HTBH000001").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单类型
-            cellDataList.add(ExcelCellData.builder().value("套餐").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("套餐").cellCustomData(cellCustomDataList.get(column++)).build());
             //订单状态
-            cellDataList.add(ExcelCellData.builder().value("已回款").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("已回款").cellCustomData(cellCustomDataList.get(column++)).build());
             //开始日期
-            cellDataList.add(ExcelCellData.builder().value("2023-03-04").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("2023-03-04").cellCustomData(cellCustomDataList.get(column++)).build());
             //结束日期
-            cellDataList.add(ExcelCellData.builder().value("2023-05-04").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("2023-05-04").cellCustomData(cellCustomDataList.get(column++)).build());
             //有效期/天
-            cellDataList.add(ExcelCellData.builder().value(61).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(61).cellCustomData(cellCustomDataList.get(column++)).build());
             //套餐时长
-            cellDataList.add(ExcelCellData.builder().value(1000.5).celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value(1000.5).cellCustomData(cellCustomDataList.get(column++)).build());
             //订单备注
-            cellDataList.add(ExcelCellData.builder().value("").celCustomData(cellCustomDataList.get(column++)).build());
+            cellDataList.add(ExcelCellData.builder().value("").cellCustomData(cellCustomDataList.get(column++)).build());
         }
     }
 
@@ -767,7 +767,7 @@ public class ExportExcelUtilTests {
         variableMap.put("time",ExcelCellData.builder().value("14:45:40").build());
         variableMap.put("sign",ExcelCellData.builder().value("徐明龙").build());
         //自定义固定值的样式
-        variableMap.put("test2",ExcelCellData.builder().value("测试2").celCustomData(
+        variableMap.put("test2",ExcelCellData.builder().value("测试2").cellCustomData(
             ExcelCustomValueAndStyleData.builder().customFormatterList(
                 Arrays.asList(
                     (cell)->{
