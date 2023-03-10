@@ -359,7 +359,7 @@ public class ExcelGenerationUtil {
     private static ExcelCellGenerationConfig buildCellGenerationConfig(ExcelCellData cellData){
         ExcelCellGenerationConfig cellGenerationConfig = new ExcelCellGenerationConfig();
         cellGenerationConfig.setValue(cellData.getValue());
-        ExcelCellCustomData celCustomData = cellData.getCelCustomData();
+        ExcelCellCustomData celCustomData = cellData.getCellCustomData();
         if(celCustomData!=null){
             //设置填充值的方法
             cellGenerationConfig.setSetValueFun(celCustomData.getSetValueFun());

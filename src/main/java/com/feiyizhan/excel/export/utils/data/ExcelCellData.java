@@ -25,7 +25,7 @@ public class ExcelCellData {
      * 单元格自定义数据
      * @author 徐明龙 XuMingLong 2023-03-03
      */
-    private ExcelCellCustomData celCustomData;
+    private ExcelCellCustomData cellCustomData;
 
 
 

@@ -20,8 +20,7 @@ import java.util.function.BiConsumer;
 public class ExcelCellGenerationConfig {
     /**
      * 单元格的值
-     * @author 徐明龙 XuMingLong
-     * @createDate 2023-03-01
+     * @author 徐明龙 XuMingLong 2023-03-01
      */
     private Object value;
 
