@@ -1,5 +1,6 @@
 package com.feiyizhan.excel.export.utils;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.*;
@@ -85,5 +86,88 @@ public class ExcelTests {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    /**
+     * 测试Shift Row
+     * @author 徐明龙 XuMingLong 2023-03-10
+     * @return void
+     */
+    @Test
+    public void test_shiftRows1(){
+        try {
+            String templateFile = "template_other.xlsx";
+            String outFile = "D:\\test_shiftRows1.xlsx";
+            XSSFWorkbook wb = new XSSFWorkbook(FileUtil.getFile(templateFile));
+            XSSFSheet newSheet = wb.cloneSheet(0);
+            int lastRowNum = newSheet.getLastRowNum();
+            newSheet.shiftRows(2,lastRowNum,10);
+            wb.removeSheetAt(0);
+            wb.write(new FileOutputStream(outFile));
+            /**
+             * 存在的BUG，
+             * 1、shiftRows 对于4.1.1版本之后的POI会导致Excel文件打开报错。
+             * 2、shiftRows 执行后，再执行XSSFWorkbook.write输出到另外一个文件，会导致原文件也被修改了行号。
+             * 下次再打开源文件会出现行号是移动后的行号，但用Excel让软件打开则是正常的没有移动行号。
+             */
+            wb.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    /**
+     * 测试Shift Row
+     * @author 徐明龙 XuMingLong 2023-03-10
+     * @return void
+     */
+    @Test
+    public void test_shiftRows2(){
+        try {
+            String templateFile = "template_other.xlsx";
+            String outFile = "D:\\test_shiftRows2.xlsx";
+            XSSFWorkbook wb = new XSSFWorkbook(FileUtil.getFile(templateFile));
+            XSSFSheet templateSheet =  wb.getSheetAt(0);
+            System.out.println("shiftRows前模版的最大行号:"+templateSheet.getLastRowNum());
+            templateSheet.rowIterator().forEachRemaining(item->{
+                System.out.println("当前行号："+item.getRowNum());
+            });
+            XSSFSheet newSheet = wb.cloneSheet(0);
+            int lastRowNum = newSheet.getLastRowNum();
+            newSheet.shiftRows(2,lastRowNum,10);
+            wb.removeSheetAt(0);
+            wb.write(new FileOutputStream(outFile));
+            System.out.println("shiftRows后模版的最大行号:"+templateSheet.getLastRowNum());
+            templateSheet.rowIterator().forEachRemaining(item->{
+                System.out.println("当前行号："+item.getRowNum());
+            });
+            wb.close();
+            /**
+             * 存在的BUG，
+             * 1、shiftRows 对于4.1.1版本之后的POI会导致Excel文件打开报错。
+             * 2、shiftRows 执行后，再执行XSSFWorkbook.write输出到另外一个文件，会导致原文件也被修改了行号。
+             * 下次再打开源文件会出现行号是移动后的行号，但用Excel让软件打开则是正常的没有移动行号。
+             * 通过Excel软件打开模版文件后就，选择行号异常的行区域，执行取消隐藏操作后，就可以恢复正常行号。
+             */
+            wb = new XSSFWorkbook(FileUtil.getFile(templateFile));
+            templateSheet =  wb.getSheetAt(0);
+            System.out.println("重新打开模版的最大行号:"+templateSheet.getLastRowNum());
+            templateSheet.rowIterator().forEachRemaining(item->{
+                System.out.println("当前行号："+item.getRowNum());
+            });
+            wb.close();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+        }
+
     }
 }
