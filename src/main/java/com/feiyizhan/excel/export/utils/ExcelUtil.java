@@ -75,6 +75,38 @@ public class ExcelUtil {
 
     }
 
+
+    /**
+     * 在指定的行后面插入指定的空行数，并支持设置插入的空行的样式参考指定行样式(使用ShiftRows方式）
+     * @author 徐明龙 XuMingLong 2023-03-14
+     * @param sheet 待操作的Sheet
+     * @param afterRowNo 指定的行的行号，将在这个行后面插入空行。
+     * @param insertedRowsNumber 待插入的空行数量
+     * @param copyStyleRowNo 复制的行样式的行号，-1 表示只创建空白行，不复制样式。
+     * @return void
+     */
+    public static void insertRowsAfterRowWithShiftRows(XSSFSheet sheet,int afterRowNo,int insertedRowsNumber,int copyStyleRowNo){
+        int moveBeginRow = afterRowNo+1;
+        //如果移动的开始行不存在，则创建一个空行，否则复制的时候会丢掉不存在的行
+        if(sheet.getRow(moveBeginRow)==null){
+            sheet.createRow(moveBeginRow);
+        }
+        int lastRowNo = sheet.getLastRowNum();
+        //计算移动的行数
+        int movedNo = lastRowNo-moveBeginRow;
+        //移动待添加的行
+        sheet.shiftRows(moveBeginRow,lastRowNo,insertedRowsNumber);
+        //如果参考的行在插入行后面，则说明参考的行在移动行后有变动，需要重新计算
+        if(copyStyleRowNo > afterRowNo){
+            //计算移动后的参考行号
+            copyStyleRowNo = copyStyleRowNo+movedNo;
+        }
+        //末尾部分的最终开始行
+        int finalBeginRowNo = insertedRowsNumber+afterRowNo;
+        //在空出位置插入指定行数的新行并复制参考行的样式
+        createBlankRows(sheet,moveBeginRow,finalBeginRowNo,copyStyleRowNo);
+    }
+
     /**
      * 在指定的行后面插入指定的空行数，并支持设置插入的空行的样式参考指定行样式
      * @author 徐明龙 XuMingLong 2023-03-02
@@ -93,14 +125,13 @@ public class ExcelUtil {
         int lastRowNo = sheet.getLastRowNum();
 
         //计算移动的行数
-        int movedNo = lastRowNo-moveBeginRow;
+        int movedNo = lastRowNo-moveBeginRow+1;
         //临时区的开始行
         int tempBeginRowNo = lastRowNo+insertedRowsNumber+1;
         //临时区的结束行
         int tempLastRowNo = tempBeginRowNo+movedNo;
         //末尾部分的最终开始行
-        int finalBeginRowNo = insertedRowsNumber+afterRowNo;
-
+        int finalBeginRowNo = insertedRowsNumber+afterRowNo+1;
         //移动开始行以后的所有行到临时区的开始行
         moveRows(sheet,moveBeginRow,lastRowNo,tempBeginRowNo);
         //如果参考的行在插入行后面，则说明参考的行在移动行后有变动，需要重新计算

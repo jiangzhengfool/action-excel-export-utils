@@ -147,9 +147,10 @@ public class ExcelGenerationUtil {
             return;
         }
         int beginRowNo = tableConfig.getBeginRowNo();
-        //插入空行
-        ExcelUtil.insertRowsAfterRow(newSheet,beginRowNo,rowList.size(),beginRowNo);
-
+        //插入空行，移动的行数为当前待插入的行数-1，因为第一行已经准备好了空白行
+        ExcelUtil.insertRowsAfterRow(newSheet,beginRowNo,rowList.size()-1,beginRowNo);
+        //使用ShiftRows 方法，移动的行数为当前待插入的行数-1，因为第一行已经准备好了空白行
+//        ExcelUtil.insertRowsAfterRowWithShiftRows(newSheet,beginRowNo,rowList.size()-1,beginRowNo);
         int currentRowNo = beginRowNo;
         for(ExcelRowGenerationConfig rowConfig: rowList){
             XSSFRow currentRow = newSheet.getRow(currentRowNo);
