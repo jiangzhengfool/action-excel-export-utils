@@ -42,7 +42,7 @@ public class ExcelTests {
                 }
             }
             System.out.println("最终的样式个数："+workbook.getNumCellStyles());
-            String outFile = "D:\\test_AlgorithmForGeneratingSimpleExcel_1.xlsx";
+            String outFile = "/Users/zhenbaoyu/code/excel-export-utils/static/test_AlgorithmForGeneratingSimpleExcel_1.xlsx";
             workbook.write(new FileOutputStream(outFile));
             workbook.close();
         } catch (IOException e) {
